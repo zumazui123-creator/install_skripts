@@ -1,1 +1,1 @@
-pip install websocket-client numpy pandas stable_baselines3 d3lpr
+pip install websocket-client numpy pandas stable_baselines3 d3rlpy
