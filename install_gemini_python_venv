@@ -41,7 +41,18 @@ pip install websocket-client numpy pandas stable-baselines3 d3rlpy
 
 echo "✅ Alle Pakete installiert."
 
-# --- 5. Abschluss ---
+# --- 5. Alias hinzufügen ---
+ALIAS_CMD="alias venv='source ~/Code/venv/bin/activate'"
+if ! grep -Fxq "$ALIAS_CMD" "$BASHRC"; then
+  echo "" >> "$BASHRC"
+  echo "# Alias zum schnellen Aktivieren der virtuellen Umgebung" >> "$BASHRC"
+  echo "$ALIAS_CMD" >> "$BASHRC"
+  echo "✅ Alias 'venv' zu ~/.bashrc hinzugefügt."
+else
+  echo "ℹ️ Alias 'venv' ist bereits in ~/.bashrc vorhanden."
+fi
+
+# --- 6. Abschluss ---
 echo "=== Setup abgeschlossen ==="
 echo "Aktiviere deine virtuelle Umgebung jederzeit mit:"
 echo "source ~/Code/venv/bin/activate"
